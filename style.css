@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+    --bg-light: #f5f3ff;
+    --primary-teal: #5f7d7d;
+    --accent-yellow: #e2ff00;
+    --text-dark: #1f2937;
+    --text-muted: #6b7280;
+    --white: #ffffff;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f2f5;
+}
+
+.main-container {
+    width: 900px;
+    height: 600px;
+    display: flex;
+    background: var(--white);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Left Panel */
+.left-panel {
+    flex: 1;
+    background-color: #ca8a04;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.left-panel h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.1;
+    z-index: 1;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
+}
+
+.left-panel::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+}
+
+/* Right Panel */
+.right-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.registration-card {
+    background-color: var(--primary-teal);
+    width: 100%;
+    max-width: 380px;
+    padding: 40px 30px;
+    border: 3px solid var(--accent-yellow);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    transform: translateY(0);
+    transition: var(--transition);
+}
+
+.registration-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.registration-card h2 {
+    color: var(--white);
+    font-size: 2.8rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+#registrationForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-group i {
+    position: absolute;
+    left: 15px;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+.form-group input {
+    width: 100%;
+    height: 50px;
+    padding: 10px 10px 10px 50px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    background: #f8fafc;
+    box-shadow: inset 0 0 0 2px var(--accent-yellow);
+}
+
+.form-footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-footer p {
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+.form-footer a {
+    color: var(--accent-yellow);
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.form-footer a:hover {
+    text-shadow: 0 0 10px rgba(226, 255, 0, 0.5);
+}
+
+/* Submit Button Customization */
+.submit-btn {
+    width: 100%;
+    height: 50px;
+    background: var(--accent-yellow);
+    border: none;
+    border-radius: 8px;
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: #cce600;
+    transform: scale(1.02);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    body {
+        height: auto;
+        padding: 20px;
+    }
+
+    .main-container {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        flex-direction: column;
+        border-radius: 15px;
+    }
+
+    .left-panel {
+        padding: 40px 20px;
+        text-align: center;
+        min-height: 250px;
+    }
+
+    .left-panel h1 {
+        font-size: 2.2rem;
+    }
+
+    .right-panel {
+        padding: 30px 20px;
+    }
+
+    .registration-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-panel h1 {
+        font-size: 1.8rem;
+    }
+
+    .registration-card {
+        padding: 30px 20px;
+    }
+
+    .registration-card h2 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Toast Notification Styles */
+#notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    transform: translateX(150%);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1000;
+}
+
+#notification.show {
+    transform: translateX(0);
+}
+
+#notification.success {
+    background-color: #10b981;
+}
+
+#notification.error {
+    background-color: #ef4444;
+}

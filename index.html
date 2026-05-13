@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | DrogaMax - Bem-vindo</title>
+    <meta name="description" content="Faça seu cadastro na DrogaMax e aproveite nossas ofertas exclusivas.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <main class="main-container">
+        <!-- Lado Esquerdo -->
+        <section class="left-panel">
+            <h1>Seja Bem-<br>Vindo (a)<br>ao<br>DrogaMax</h1>
+        </section>
+
+        <!-- Lado Direito -->
+        <section class="right-panel">
+            <div class="registration-card">
+                <h2>Cadastro</h2>
+                
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <i data-lucide="mail"></i>
+                        <input type="email" id="email" placeholder="Digite seu Email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <i data-lucide="lock"></i>
+                        <input type="password" id="password" placeholder="Digite sua senha" required>
+                    </div>
+
+                    <div class="form-group">
+                        <i data-lucide="users"></i>
+                        <input type="text" id="fullname" placeholder="Digite seu Nome completo" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Cadastrar</button>
+                </form>
+
+                <div class="form-footer">
+                    <p>Já tem Cadastro ? Faça <a href="#">Login</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="notification"></div>
+
+    <script type="module" src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
